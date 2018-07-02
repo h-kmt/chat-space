@@ -128,37 +128,37 @@ html, body, .chat_space, .left {
   height: 100%;
   width: 100%; }
 
-.chat_space_message p {
+.notification p {
   width: 100%;
   background: #38aef0;
   text-align: center;
   color: #fff; }
 
-.left {
+.chat-side {
   width: 300px;
   min-height: 100%;
   background: #2f3e51;
   color: #fff; }
 
-.left_top {
+.chat-side__user {
   height: 70px;
   background: #253141;
   padding: 35px 20px 0; }
 
-.left_top p {
+.lchat-side__user p {
   font-size: 16px;
   font-weight: bold; }
 
-.left_under {
+.chat-side__groups {
   padding: 20px; }
 
-.left a {
+.chat-side__groups-list a {
   color: #fff;
   text-decoration: none; }
 
-.left_under__title {
+.chat-side__group-name {
   font-size: 15px;
   padding-bottom: 5px; }
 
-.left_under__message {
+.chat-side__group-message {
   font-size: 11px; }
