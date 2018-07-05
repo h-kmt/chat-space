@@ -5,20 +5,34 @@
       .chat-user.clearfix
         %h5 seo
         .chat-user__actions
-          %a.chat-user__action{:href => "#"}
+          = link_to class: "chat-user__action" do
             %i.fa.fa-pencil-square-o
-          %a.chat-user__action{:href => "#"}
+          = link_to class: "chat-user__action" do
             %i.fa.fa-cog
       %ul.chat-groups
         %li.chat-group
-          %a.chat-group__link{:href => "#"}
+          = link_to class: "chat-group__link" do
             %p.chat-group__name sample
             %p.chat-group__message Good bye world...
     .chat-main
       .chat-header.clearfix
         .chat-header--left
           %h2 sample
-          %p.chat-header__users Members:
+          %p.chat-header__users
+            Members:
+            %span.chat-header__user 名前
         .chat-header--right
-          %a.chat-header__edit-btn{:href => "#"} Edit
+          = link_to 'Edit', class: "chat-header__edit-btn"
       .chat-body
+        %ul.chat-message
+      .chat-footer
+        %form#new_message.new_message{"accept-charset" => "UTF-8", :method => "post"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+          %input{:name => "authenticity_token", :type => "hidden", :value => "N91wVMb+jYbFXOLe/aTW/L1Yi5aIqktyby1clT+aDyaBOfo/8/SgyGscN8t1zOW1hPGdnvl9TUdt47cnpCZMjw=="}/
+          .chat-footer__body
+            %textarea#message_body{:name => "message[body]", :placeholder => "type a message", :row => "1"}
+              :preserve
+            %label.chat-footer__file
+              %input#message_image{:name => "message[image]", :type => "file"}/
+              %i.fa.fa-image
+            %input{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
