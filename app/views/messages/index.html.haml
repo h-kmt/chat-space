@@ -24,15 +24,18 @@
         .chat-header--right
           = link_to 'Edit', class: "chat-header__edit-btn"
       .chat-body
-        %ul.chat-message
+        .chat-body__messages-list
+          .chat-body__message.clearfix
+            %p.chat-body__message-name
+              名前
+              %span.chat-body__message-time 2018/00/00
+            .chat-body__message-body
+              テスト
+              = image_tag "", class:"chat-body__message-body-image"
       .chat-footer
-        %form#new_message.new_message{"accept-charset" => "UTF-8", :method => "post"}
-          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-          %input{:name => "authenticity_token", :type => "hidden", :value => "N91wVMb+jYbFXOLe/aTW/L1Yi5aIqktyby1clT+aDyaBOfo/8/SgyGscN8t1zOW1hPGdnvl9TUdt47cnpCZMjw=="}/
-          .chat-footer__body
-            %textarea#message_body{:name => "message[body]", :placeholder => "type a message", :row => "1"}
-              :preserve
-            %label.chat-footer__file
-              %input#message_image{:name => "message[image]", :type => "file"}/
-              %i.fa.fa-image
-            %input{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+        .chat-footer__body
+          = form_for @user do |f|
+            = f.label :text
+            = f.text_field :text
+            = f.file_field :image, id: "upload-icon"
+            = f.submit "Send"

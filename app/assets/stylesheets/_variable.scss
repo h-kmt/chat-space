@@ -42,7 +42,7 @@ h5 {
 }
 
 .chat-main {
-  padding: 35px 40px 0 40px;
+  padding-top: 35px;
   margin-left: 300px;
   position: relative;
 }
@@ -52,9 +52,15 @@ h2 {
   color: #333;
 }
 
-.chat-header__users {
+.chat-header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.chat-header__users,.chat-body__message-time {
   font-size: 12px;
   color: #999;
+  font-weight: normal;
 }
 
 .chat-header--right {
@@ -70,4 +76,36 @@ h2 {
 .chat-header--right a {
   color: #38AEF0;
   text-decoration: none;
+}
+
+.chat-body,.chat-footer,.chat-header,.chat-body__messages-list {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.chat-body {
+  padding: 6px 0;
+}
+
+.chat-body__message {
+  padding-top: 40px;
+}
+
+.chat-body__message-name {
+  font-weight: bold;
+}
+
+.chat-footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: #aaa;
+}
+
+.chat-footer__body {
+  padding: 20px 0;
+}
+
+.textarea {
+  height: 50px!important;
 }
