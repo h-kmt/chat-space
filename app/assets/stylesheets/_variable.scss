@@ -4,6 +4,10 @@ html,body,.layout-notification,.chat{
   overflow: hidden;
 }
 
+.chat {
+  position: relative;
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -26,6 +30,8 @@ a:hover{
   background: #2f3e51;
   color: #fff;
   float: left;
+  position: relative;
+  z-index: 5;
 }
 
 h5 {
@@ -93,7 +99,7 @@ h2 {
   text-decoration: none;
 }
 
-.chat-body,.chat-footer,.chat-header,.chat-body__messages-list {
+.chat-body,.chat-header,.chat-body__messages-list {
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -112,12 +118,14 @@ h2 {
 
 .chat-footer {
   position: fixed;
+  width: 100%;
+  right: 0;
   bottom: 0;
   background: #aaa;
 }
 
 .chat-footer__body {
-  padding: 20px 0;
+  padding: 20px 40px 20px 340px;
 }
 
 #user_text {
