@@ -36,6 +36,8 @@
         .chat-footer__body
           = form_for @user do |f|
             = f.label :text
-            = f.text_field :text
-            = f.file_field :image, id: "upload-icon"
-            = f.submit "Send"
+            = f.text_area :text
+            %label.upload-label{for: "upload-icon"}
+              %i.fa.fa-picture-o
+              = f.file_field :image, id: "upload-icon"
+            = f.submit "Send", class: "send"
