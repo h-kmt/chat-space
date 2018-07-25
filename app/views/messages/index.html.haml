@@ -34,10 +34,3 @@
               = image_tag "", class:"chat-body__message-body-image"
     .chat-footer
       .chat-footer__body
-        = form_for @user do |f|
-          = f.label :text
-          = f.text_area :text
-          %label.upload-label{for: "upload-icon"}
-            %i.fa.fa-picture-o
-            = f.file_field :image, id: "upload-icon"
-          = f.submit "Send", class: "send"
